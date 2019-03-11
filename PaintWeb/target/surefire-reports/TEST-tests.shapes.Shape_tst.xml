@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="tests.shapes.Shape_tst" time="0.025" tests="10" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="10"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb/target/test-classes:/Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb/target/classes:/Users/florentbourgeoisPluton/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar:/Users/florentbourgeoisPluton/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/Users/florentbourgeoisPluton/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/Users/florentbourgeoisPluton/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar:/Users/florentbourgeoisPluton/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.3.1/junit-jupiter-engine-5.3.1.jar:/Users/florentbourgeoisPluton/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar:"/>
+    <property name="java.vm.vendor" value="&quot;Oracle Corporation&quot;"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="10"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb/target/surefire/surefirebooter2099913734980210854.jar /Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb/target/surefire 2019-03-11T23-32-00_596-jvmRun1 surefire8509085098639338139tmp surefire_0227851666593291497tmp"/>
+    <property name="http.nonProxyHosts" value="localhost|*.localhost"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb/target/test-classes:/Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb/target/classes:/Users/florentbourgeoisPluton/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.3.1/junit-jupiter-api-5.3.1.jar:/Users/florentbourgeoisPluton/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/Users/florentbourgeoisPluton/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/Users/florentbourgeoisPluton/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar:/Users/florentbourgeoisPluton/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.3.1/junit-jupiter-engine-5.3.1.jar:/Users/florentbourgeoisPluton/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/florentbourgeoisPluton"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2018-07-17"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb/target/surefire/surefirebooter2099913734980210854.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="localhost|*.localhost"/>
+    <property name="java.runtime.version" value="10.0.2+13"/>
+    <property name="user.name" value="florentbourgeoisPluton"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="10.13.6"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.3"/>
+    <property name="localRepository" value="/Users/florentbourgeoisPluton/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/gk/dm9wxrtj1x96__dh0hqdx4280000gq/T/"/>
+    <property name="java.version" value="10.0.2"/>
+    <property name="user.dir" value="/Users/florentbourgeoisPluton/git/PaintWeb/PaintWeb"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/florentbourgeoisPluton/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="10.0.2+13"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="54.0"/>
+    <property name="socksNonProxyHosts" value="localhost|*.localhost"/>
+  </properties>
+  <testcase name="Given_selectedShape_When_toString_Then_provideText" classname="tests.shapes.Shape_tst" time="0.002"/>
+  <testcase name="Given_selectedShape_When_toggle_Then_isNotSelected" classname="tests.shapes.Shape_tst" time="0"/>
+  <testcase name="Given_notSelectedShape_When_toString_Then_provideText" classname="tests.shapes.Shape_tst" time="0"/>
+  <testcase name="Given_notSelectedShape_When_select_Then_isSelected" classname="tests.shapes.Shape_tst" time="0.001"/>
+  <testcase name="Given_Nothing_When_NewShape_Then_isNotSelected" classname="tests.shapes.Shape_tst" time="0"/>
+  <testcase name="Given_notSelectedShape_When_unselect_Then_isNotSelected" classname="tests.shapes.Shape_tst" time="0"/>
+  <testcase name="Given_selectedShape_When_unselect_Then_isNotSelected" classname="tests.shapes.Shape_tst" time="0"/>
+  <testcase name="failTest" classname="tests.shapes.Shape_tst" time="0.01">
+    <failure message="should fail" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: should fail
+	at tests.shapes.Shape_tst.failTest(Shape_tst.java:42)
+</failure>
+  </testcase>
+  <testcase name="Given_selectedShape_When_select_Then_isSelected" classname="tests.shapes.Shape_tst" time="0"/>
+  <testcase name="Given_notSelectedShape_When_toggle_Then_isSelected" classname="tests.shapes.Shape_tst" time="0"/>
+</testsuite>

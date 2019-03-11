@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: tests.shapes.Shape_tst
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.025 s <<< FAILURE! - in tests.shapes.Shape_tst
+failTest  Time elapsed: 0.01 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: should fail
+	at tests.shapes.Shape_tst.failTest(Shape_tst.java:42)
+
