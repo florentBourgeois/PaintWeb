@@ -1,0 +1,13 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.5.RELEASE</version>
+  </parent>
+  <groupId>fr.cci.formationobjet.java</groupId>
+  <artifactId>PaintWeb</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>PaintWeb</name>
+  <description>Ce projet a pour but de mobiliser l'ensemble des compétences nécéssaires pour le développement d'une application java. Il aborde les notions d'architecture objet, de tests, de gestion d'erreurs, d'interface graphique et de webservices</description>
+</project>
