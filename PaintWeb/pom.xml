@@ -12,7 +12,27 @@
   <description>Ce projet a pour but de mobiliser l'ensemble des compétences nécéssaires pour le développement d'une application java. Il aborde les notions d'architecture objet, de tests, de gestion d'erreurs, d'interface graphique et de webservices</description>
   
   
-
+	<organization>
+        <name>UHA 4.0</name>
+        <url>http://www.0.4.uha.fr/</url>
+    </organization>
+ 
+    <developers>
+        <developer>
+            <id>FBourgeois</id>
+            <name>Florent Bourgeois</name>
+            <email>florent.bourgeois@uha.fr</email>
+        </developer>
+    </developers>
+ 
+    <inceptionYear>2019</inceptionYear>
+ 
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
   
   
   	 <properties>
