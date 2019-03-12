@@ -15,9 +15,6 @@ import java.io.PrintStream;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 
 
 
@@ -56,7 +53,7 @@ class STampon_tst {
 	// vérifier que l'affichage en texte est correct.
 	@Test
 	void Given_DefaultConstruct_When_toString_Then_ShouldReturnText(){
-		assertEquals("Assemblage : isSelected=false", defaultConstruct.toString());
+		assertEquals("Tampon : isSelected=false", defaultConstruct.toString().replace("\n", ""));
 	}
 	
 	@Test
@@ -75,7 +72,7 @@ class STampon_tst {
 		manualConstruct.add(p);
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("Assemblage : isSelected=false");
+		sb.append("Tampon : isSelected=false");
 		sb.append("\n\t").append(s);
 		sb.append("\n\t").append(s2);
 		sb.append("\n\t").append(c);
@@ -87,14 +84,14 @@ class STampon_tst {
 	@Test
 	void Given_DefaultConstruct_When_print_Then_ShouldDisplayText(){
 		defaultConstruct.print();
-		assertEquals("Assemblage : isSelected=false", outContent.toString().replace("\r\n", "\n"));
+		assertEquals("Tampon : isSelected=false", outContent.toString().replace("\n", ""));
 	}
 	
 	@Test
 	void Given_DefaultConstructSelected_When_Print_Then_ShouldDisplayText(){
 		defaultConstruct.select();
 		defaultConstruct.print();
-		assertEquals("Assemblage : isSelected=true", outContent.toString().replace("\r\n", "\n"));
+		assertEquals("Tampon : isSelected=true", outContent.toString().replace("\n", ""));
 	}	
 		
 	// vérifier que la requette de localisation est correcte. (la localisation est le point en haut à gauche du rectangle
@@ -130,7 +127,7 @@ class STampon_tst {
 	void Given_DefaultSquare_When_GettingBounds_Then_shouldReturnBounds() {
 		Rectangle bounds = defaultConstruct.getBounds();  //localisation 0 taille 0
 		Point expectedBoundsLocation = new Point(0, 0);
-		assertEquals(bounds.getLocation(), expectedBoundsLocation);
+		assertEquals(expectedBoundsLocation, bounds.getLocation());
 		assertEquals(0, (int)bounds.getWidth()); 
 		assertEquals(0, (int)bounds.getHeight()); 
 	}
@@ -141,7 +138,7 @@ class STampon_tst {
 		Rectangle bounds = builtConstruct.getBounds();
 
 		Point expectedBoundsLocation = new Point(2, 30);
-		assertEquals(bounds.getLocation(), expectedBoundsLocation);
+		assertEquals(expectedBoundsLocation, bounds.getLocation());
 		assertEquals(110, (int)bounds.getMaxX()); 
 		assertEquals(110, (int)bounds.getMaxY()); 
 		assertEquals(108, (int)bounds.getWidth()); 

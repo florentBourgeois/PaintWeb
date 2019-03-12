@@ -6,49 +6,29 @@ import java.util.ArrayList;
 
 public class STampon extends SShape{
 
-	ArrayList<SShape> formes = new ArrayList<SShape>();
+	ArrayList<SShape> shapes = new ArrayList<SShape>();
 	
 	
 	public STampon() {
-		formes.add(new SPixel());
-		formes.add(new SSquare());
-		formes.add(new SCircle());
-
 	}
 	
 	public void add(SShape s) {
-		formes.add(s);
+		shapes.add(s);
 	}
 	
 	public void remove(int x) {
-		formes.remove(x);
-	}
-	
-	@Override
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		sb.append("Tampon : \n");
-		/*for(int i = 0; i<formes.size(); i++) {
-			SShape s = formes.get(i);
-			sb.append(s).append("\n");
-		}
-		Iterator<SShape> it = formes.iterator();
-		while(it.hasNext()) {
-			SShape s = it.next();
-			sb.append(s).append("\n");
-		}*/
-		for (SShape s : formes) {
-			sb.append(s).append("\n");
-		}
-		return sb.toString();
+		shapes.remove(x);
 	}
 	
 	
 	@Override
 	public Point getLoc() {
+		if (this.shapes.size()==0) {
+			return new Point(0,0);
+		}
 		int x = 99999;
 		int y = 99999;
-		for (SShape s : formes) {
+		for (SShape s : shapes) {
 			if(s.getLoc().x < x)
 				x = s.getLoc().x;
 			if(s.getLoc().y < y)
@@ -56,6 +36,8 @@ public class STampon extends SShape{
 		}
 		return new Point(x, y);
 	}
+	
+	
 
 	@Override
 	public void setLoc(Point p) {
@@ -65,18 +47,53 @@ public class STampon extends SShape{
 		translate(dx, dy);
 	}
 
+	
 	@Override
 	public void translate(int dx, int dy) {
-		for (SShape sShape : formes) {
+		for (SShape sShape : shapes) {
 			sShape.translate(dx, dy);
 		}
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		// TODO Auto-generated method stub
-		return null;
+		Point loc = this.getLoc();
+		Point end = new Point(0, 0);
+		for (SShape s : shapes) {
+			Rectangle r = s.getBounds();
+			if (r.getMaxX() > end.getX()) {
+				end.x = (int) r.getMaxX();
+			}
+			if (r.getMaxY() > end.getY()) {
+				end.y = (int) r.getMaxY();
+			}
+		}
+		int w = end.x - loc.x;
+		int h = end.y - loc.y;
+		return new Rectangle(loc.x, loc.y, w, h);
 	}
+	
+	
+	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("Tampon : ").append(super.toString());
+		/*for(int i = 0; i<formes.size(); i++) {
+			SShape s = formes.get(i);
+			sb.append(s).append("\n");
+		}
+		Iterator<SShape> it = formes.iterator();
+		while(it.hasNext()) {
+			SShape s = it.next();
+			sb.append(s).append("\n");
+		}*/
+		for (SShape s : shapes) {
+			sb.append("\n\t").append(s);
+		}
+		return sb.toString();
+	}
+	
 	
 	
 	public static void main(String[] args) {

@@ -37,10 +37,6 @@ class Shape_tst {
 
 	}
 	
-	@Test
-	void failTest() {
-		fail("should fail");
-	}
 	
 	////////toString test
 	@Test

@@ -4,7 +4,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 
 public class SPixel extends SShape{
-	private int x=1, y=1;
+	private int x=0, y=0;
 	
 	
 	public SPixel() {
@@ -20,6 +20,10 @@ public class SPixel extends SShape{
 		this.y = pix.y;
 	}
 	
+	public SPixel(Point p) {
+		this(new SPixel(p.x, p.y));
+	}
+
 	@Override
 	public Point getLoc() {
 		return new Point(this.x, this.y);
@@ -37,11 +41,19 @@ public class SPixel extends SShape{
 		this.y = this.y +dy;
 	}
 	
-	
+		@Override
+	public Rectangle getBounds() {
+		return new Rectangle(x, y, 1, 1);
+	}
 
 	@Override
 	public String toString() {
-		return "Pixel";
+		StringBuffer sb = new StringBuffer();
+		sb.append("Pixel : ")
+			.append(this.x).append("|").append(this.y)
+			.append(" ; ").append(super.toString());
+		
+		return sb.toString();
 	}
 
 	
@@ -69,6 +81,8 @@ public class SPixel extends SShape{
 		p.toggleSelect();
 		System.out.println(p.isSelected());
 	}
+
+
 
 
 	

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: tests.shapes.Shape_tst
+Test set: tests.shapes.STampon_tst
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in tests.shapes.Shape_tst
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in tests.shapes.STampon_tst

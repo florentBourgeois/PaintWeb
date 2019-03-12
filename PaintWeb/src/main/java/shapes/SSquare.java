@@ -5,37 +5,48 @@ import java.awt.Point;
 public class SSquare extends SRectangle {
 
 	public SSquare() {
-		this.origin = new SPixel();
-		this.l = 10;
-		this.h=10;
+		this.origin = new SPixel(0,0);
+		this.width = 1;
+		this.height= this.width;
 	}
 	
 	public SSquare(Point p, int l) {
 		origin = new SPixel(p.x, p.y);
-		this.l = l;
-		this.h = l;
+		this.width = l;
+		this.height = l;
 	}
 	
 	
 	public SSquare(Point p, Point p2) throws Exception {
 		origin.setLoc(p);
-		int l = p2.x - p.x;
-		int h = p2.y - p.y;
-		if(l != h)
-			throw new Exception("erreur longuer != largeur");
+		int width = p2.x - p.x;
+		int height = p2.y - p.y;
+		if(width != height)
+			throw new Exception("The two points does not form a square : width="+width +" height="+height);
 		if(p.x <0 || p.y <0 || p2.x <0 || p2.y <0)
 			throw new Exception("point négatif");
-		this.l = l;
-		this.h = l;
+		this.width = width;
+		this.height = height;
 		
 
 	}
 	
+
 	@Override
 	public String toString() {
-		
-		return "Carre";
+		int x = this.getLoc().x;
+		int y = this.getLoc().y;
+		StringBuffer sb = new StringBuffer();
+		sb.append("Square : ")
+		 .append("location=").append(x).append("|").append(y)
+		 .append(" ; width=").append(this.width)
+		 .append(" ; ").append("isSelected=").append(this.isSelected());
+		return sb.toString();
 	}
+
+	
+	
+	
 	
 	public static void main(String[] args) {
 		SSquare s = new SSquare();

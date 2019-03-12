@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="tests.shapes.Shape_tst" time="0.005" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="tests.shapes.SCircle_tst" time="0.001" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -62,13 +62,17 @@
     <property name="java.class.version" value="54.0"/>
     <property name="socksNonProxyHosts" value="localhost|*.localhost"/>
   </properties>
-  <testcase name="Given_selectedShape_When_toString_Then_provideText" classname="tests.shapes.Shape_tst" time="0"/>
-  <testcase name="Given_selectedShape_When_toggle_Then_isNotSelected" classname="tests.shapes.Shape_tst" time="0"/>
-  <testcase name="Given_notSelectedShape_When_toString_Then_provideText" classname="tests.shapes.Shape_tst" time="0"/>
-  <testcase name="Given_notSelectedShape_When_select_Then_isSelected" classname="tests.shapes.Shape_tst" time="0"/>
-  <testcase name="Given_Nothing_When_NewShape_Then_isNotSelected" classname="tests.shapes.Shape_tst" time="0"/>
-  <testcase name="Given_notSelectedShape_When_unselect_Then_isNotSelected" classname="tests.shapes.Shape_tst" time="0"/>
-  <testcase name="Given_selectedShape_When_unselect_Then_isNotSelected" classname="tests.shapes.Shape_tst" time="0"/>
-  <testcase name="Given_selectedShape_When_select_Then_isSelected" classname="tests.shapes.Shape_tst" time="0"/>
-  <testcase name="Given_notSelectedShape_When_toggle_Then_isSelected" classname="tests.shapes.Shape_tst" time="0"/>
+  <testcase name="Given_DefaultCircleSelected_When_Print_Then_ShouldDisplayText" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_CircleFromPointAndRad_When_GettingBounds_Then_shouldReturnBounds" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_CircleWithPoints_When_translating_Then_boundsshouldBe" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_CircleWithParameters_When_getLocation_Then_Location" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_defaultCircle_When_getLocation_Then_LocationOf0_0" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_DefaultCircle_When_print_Then_ShouldDisplayText" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_DefaultCircle_When_GettingBounds_Then_shouldReturnBounds" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_defaultCircle_When_setLocation_Then_printShouldBe" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_Circle_When_translating_Then_boundsshouldBe" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_DefaultCircle_When_toString_Then_ShouldReturnText" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_Nothing_When_CreatingCircleWithTwoPointAndNegativeRadAndPrint_Then_shouldDisplay" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_Nothing_When_CreatingCircleWithPointAndRadAndPrint_Then_shouldDisplay" classname="tests.shapes.SCircle_tst" time="0"/>
+  <testcase name="Given_DefaultSquare_When_translating_Then_boundsshouldBe" classname="tests.shapes.SCircle_tst" time="0"/>
 </testsuite>
