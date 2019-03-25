@@ -3,7 +3,7 @@ package tests.shapes;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import shapes.SRectangle;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.SRectangle;
 
 import java.awt.Point;
 import java.awt.Rectangle;

@@ -1,10 +1,17 @@
-package shapes;
+package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
+
+@Entity
 public class SCircle extends SShape {
 
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private SPixel origin = new SPixel(0,0);
 	private int radius = 1; 
 	
@@ -47,7 +54,7 @@ public class SCircle extends SShape {
 	
 	
 
-
+	@Override
 	public Rectangle getBounds() {
 		int l = this.radius *2;
 		int x = this.origin.getLoc().x - radius;
@@ -55,6 +62,25 @@ public class SCircle extends SShape {
 		Rectangle r = new Rectangle(x, y, l, l);
 		return r;
 	}
+	
+	
+	
+	
+	
+	//getters and setters for jpa
+	public SPixel getOrigin() {
+		return origin;
+	}
+	public void setOrigin(SPixel origin) {
+		this.origin = origin;
+	}
+	public int getRadius() {
+		return radius;
+	}
+	public void setRadius(int radius) {
+		this.radius = radius;
+	}
+	
 	
 	
 	

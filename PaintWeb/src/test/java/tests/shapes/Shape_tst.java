@@ -3,15 +3,13 @@ package tests.shapes;
 
 import org.junit.jupiter.api.Test;
 
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.SShape;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
 import java.awt.Point;
 import java.awt.Rectangle;
-
-
-
-import shapes.SShape;
 
 
 class Shape_tst {

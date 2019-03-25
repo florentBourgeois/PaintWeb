@@ -1,19 +1,32 @@
-package shapes;
+package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class SPixel extends SShape{
-	private int x=0, y=0;
+	
+	
+	private int x; 
+	private int y;
 	
 	
 	public SPixel() {
+		x=0;
+		y=0;
 	}
 	
 	public SPixel(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
+	
 	
 	public SPixel(SPixel pix) {
 		this.x = pix.x;
@@ -24,11 +37,9 @@ public class SPixel extends SShape{
 		this(new SPixel(p.x, p.y));
 	}
 
-	@Override
 	public Point getLoc() {
 		return new Point(this.x, this.y);
 	}
-	
 	@Override
 	public void setLoc(Point p) {
 		this.x = p.x;
@@ -41,7 +52,7 @@ public class SPixel extends SShape{
 		this.y = this.y +dy;
 	}
 	
-		@Override
+	@Override
 	public Rectangle getBounds() {
 		return new Rectangle(x, y, 1, 1);
 	}
@@ -57,7 +68,30 @@ public class SPixel extends SShape{
 	}
 
 	
+	/*
+	 * getters and setters for jpa
+	 */
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
 	
+	
+
+
+
 	public static void main(String[] args) {
 		SPixel p = new SPixel();
 		SPixel p2 = new SPixel(100, 500);
@@ -72,7 +106,7 @@ public class SPixel extends SShape{
 		p.translate(5, 6);
 		System.out.println(p.getLoc());
 
-		System.out.println();
+		/*System.out.println();
 		System.out.println(p.isSelected());
 		p.select();
 		System.out.println(p.isSelected());
@@ -80,6 +114,7 @@ public class SPixel extends SShape{
 		System.out.println(p.isSelected());
 		p.toggleSelect();
 		System.out.println(p.isSelected());
+		*/
 	}
 
 

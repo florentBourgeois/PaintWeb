@@ -1,15 +1,24 @@
-package shapes;
+package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+
+
+
+@Entity
 public class STampon extends SShape{
 
-	ArrayList<SShape> shapes = new ArrayList<SShape>();
+	@ElementCollection
+	List<SShape> shapes;
 	
 	
 	public STampon() {
+		this.shapes = new ArrayList<SShape>();
 	}
 	
 	public void add(SShape s) {
@@ -75,6 +84,16 @@ public class STampon extends SShape{
 	
 	
 	
+	
+	//getters and setters for jpa
+	public List<SShape> getShapes() {
+		return shapes;
+	}
+
+	public void setShapes(List<SShape> shapes) {
+		this.shapes = shapes;
+	}
+
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();

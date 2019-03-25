@@ -1,10 +1,20 @@
-package shapes;
+package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class SRectangle extends SShape{
 
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	protected SPixel origin = new SPixel(1,1); 
 	protected int width=2;
 	protected int height=4; 
@@ -44,6 +54,29 @@ public class SRectangle extends SShape{
 		return new Rectangle(origin.getLoc().x, origin.getLoc().y, this.width, this.height);
 	}
 	
+	
+	
+	
+	//getters and setters for jpa
+	public SPixel getOrigin() {
+		return origin;
+	}
+	public void setOrigin(SPixel origin) {
+		this.origin = origin;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	public int getHeight() {
+		return height;
+	}	
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
 	@Override
 	public String toString() {
 		int x = this.getLoc().x;

@@ -3,10 +3,10 @@ package tests.shapes;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import shapes.SCircle;
-import shapes.SPixel;
-import shapes.SSquare;
-import shapes.STampon;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.SCircle;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.SPixel;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.SSquare;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.STampon;
 
 import java.awt.Point;
 import java.awt.Rectangle;

@@ -1,7 +1,10 @@
-package shapes;
+package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
 import java.awt.Point;
 
+import javax.persistence.Entity;
+
+@Entity
 public class SSquare extends SRectangle {
 
 	public SSquare() {
