@@ -1,10 +1,16 @@
 package fr.cci.formationobjet.java.PaintWeb.controller;
 
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import fr.cci.formationobjet.java.PaintWeb.IHM.PaintView;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.SCircle;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.SPixel;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.SRectangle;
 import fr.cci.formationobjet.java.PaintWeb.model.shapes.SSquare;
 import fr.cci.formationobjet.java.PaintWeb.model.shapes.STampon;
 
@@ -12,12 +18,28 @@ public class PaintController implements MouseMotionListener, MouseListener{
 
 	private PaintView view;
 	private STampon model = new STampon();
-	
-	public void setView(PaintView paintview) {
-		this.view = paintview;
-		
-	}
-	
+
+	private ActionListener resetActionListener;
+    private ActionListener createActionListener;
+
+    public PaintController(){
+        resetActionListener = new ResetActionListener();
+        createActionListener = new CreateActionListener();
+    }
+
+
+    public void setView(PaintView view) {
+        this.view = view;
+    }
+
+    public ActionListener getResetActionListener() {
+        return resetActionListener;
+    }
+
+    public ActionListener getCreateActionListener() {
+        return createActionListener;
+    }
+
 	@Override
 	public void mouseDragged(MouseEvent e) {		
 	}
@@ -60,7 +82,34 @@ public class PaintController implements MouseMotionListener, MouseListener{
 		
 	}
 
-	
+	 class ResetActionListener implements ActionListener{
+
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            model = new STampon();
+	            view.updateUI();
+	        }
+	    }
+
+
+	    class CreateActionListener implements ActionListener{
+
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            STampon t2 = new STampon();
+	            t2.add(new SRectangle(new Point(1,4),10,10));
+	            t2.add(new SRectangle(new Point(100,100),1,50));
+	            t2.add(new SCircle(new Point(40,40), 200));
+	            t2.add(new SPixel(10,20));
+	            t2.add(new SPixel(30,30));
+	            t2.add(new SPixel(40,30));
+	            t2.add(new SPixel(100,101));
+
+	            model = t2;
+	            view.updateUI();
+
+	        }
+	    }
 	
 
 }

@@ -31,6 +31,14 @@ public class PaintApp extends JFrame{
 		paintview.addMouseMotionListener(controller);
 		paintview.addMouseListener(controller);
 		controller.setView(paintview);
+		
+		
+		JButton resetButton = new JButton("Reset all");
+		JButton createButton = new JButton("Create shapes");
+		this.getContentPane().add(resetButton, BorderLayout.NORTH);
+		this.getContentPane().add(createButton, BorderLayout.SOUTH);
+		resetButton.addActionListener(controller.getResetActionListener());
+		createButton.addActionListener(controller.getCreateActionListener());
 	}
 	
 	
