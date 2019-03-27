@@ -29,6 +29,7 @@ public class PaintApp extends JFrame{
 		
 		PaintController controller = new PaintController();
 		paintview.addMouseMotionListener(controller);
+		paintview.addMouseListener(controller);
 		controller.setView(paintview);
 	}
 	
