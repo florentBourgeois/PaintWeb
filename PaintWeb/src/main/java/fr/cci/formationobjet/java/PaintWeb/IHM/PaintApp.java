@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 
 
 
+
 public class PaintApp extends JFrame{
 	
 	public PaintApp() {
@@ -21,7 +22,8 @@ public class PaintApp extends JFrame{
 			}
 		});
 		
-		
+		PaintView paintview = new PaintView();
+		this.getContentPane().add(paintview, BorderLayout.CENTER);
 		
 		
 	}
