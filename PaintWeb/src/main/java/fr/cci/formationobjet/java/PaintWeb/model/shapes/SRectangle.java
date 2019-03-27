@@ -1,5 +1,6 @@
 package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -52,6 +53,13 @@ public class SRectangle extends SShape{
 	@Override
 	public Rectangle getBounds() {
 		return new Rectangle(origin.getLoc().x, origin.getLoc().y, this.width, this.height);
+	}
+	
+	@Override
+	public void drawMyseld(Graphics g) {
+		Rectangle r = this.getBounds();
+		g.drawRect(r.x, r.y, r.width, r.height);
+		
 	}
 	
 	

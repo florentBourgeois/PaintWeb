@@ -1,5 +1,6 @@
 package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -65,6 +66,12 @@ public class SPixel extends SShape{
 			.append(" ; ").append(super.toString());
 		
 		return sb.toString();
+	}
+	
+	@Override
+	public void drawMyseld(Graphics g) {
+		g.drawRect(x, y, 1,1);
+		
 	}
 
 	

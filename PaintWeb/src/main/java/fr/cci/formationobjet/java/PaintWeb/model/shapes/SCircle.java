@@ -1,5 +1,6 @@
 package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -64,7 +65,12 @@ public class SCircle extends SShape {
 	}
 	
 	
-	
+	@Override
+	public void drawMyseld(Graphics g) {
+		Rectangle r = this.getBounds();
+		g.drawOval(r.x, r.y, r.width, r.height);
+		
+	}
 	
 	
 	//getters and setters for jpa

@@ -1,5 +1,6 @@
 package fr.cci.formationobjet.java.PaintWeb.model.shapes;
 
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
@@ -83,6 +84,12 @@ public class STampon extends SShape{
 	}
 	
 	
+	@Override
+	public void drawMyseld(Graphics g) {
+		for (SShape s : shapes) {
+			s.drawMyseld(g);
+		}
+	}
 	
 	
 	//getters and setters for jpa

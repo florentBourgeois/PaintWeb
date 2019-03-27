@@ -7,7 +7,7 @@ import fr.cci.formationobjet.java.PaintWeb.model.shapes.SShape;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -32,7 +32,8 @@ class Shape_tst {
 
 		public Rectangle getBounds() { return null;	}
 
-
+		@Override
+		public void drawMyseld(Graphics g) {}
 	}
 	
 	

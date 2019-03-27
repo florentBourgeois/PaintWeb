@@ -39,25 +39,5 @@ public class PaintServerController {
 		//MAPPER.registerSubtypes(new NamedType(SRectangle.class, "Rectangle"));
 	}
 	
-    @GetMapping(value = "/paint/helloworld")
-    public String getHello() {
-    	return "hello world";
-    }
-	
-    @GetMapping(value = "paint/shapes/{id}")
-    public String getSpixel(@PathVariable int id) {
-        return "Vous avez demandé un spixel avec l'id  " + id;
-    }
-    
-    @RequestMapping(value="/paint/shapes", method=RequestMethod.GET)
-    public List<SShape> listShapes() throws JsonProcessingException {
-    	List<SShape> l = shapeDAO.findAll();
-    	for (SShape s : l) {
-			System.out.println(s);
-		}
-    	//MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(shapeDAO.findAll());
-    	
-        return shapeDAO.findAll();
-        
-    }
+   
 }

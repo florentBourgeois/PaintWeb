@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import fr.cci.formationobjet.java.PaintWeb.model.utilities.Drawable;
 import fr.cci.formationobjet.java.PaintWeb.model.utilities.Printable;
 
 @JsonTypeInfo(use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.CLASS,
@@ -30,7 +31,7 @@ import fr.cci.formationobjet.java.PaintWeb.model.utilities.Printable;
 })
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class SShape implements Printable{
+public abstract class SShape implements Printable, Drawable{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
