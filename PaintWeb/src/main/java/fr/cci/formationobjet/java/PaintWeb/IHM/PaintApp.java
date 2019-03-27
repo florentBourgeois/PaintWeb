@@ -39,6 +39,13 @@ public class PaintApp extends JFrame{
 		this.getContentPane().add(createButton, BorderLayout.SOUTH);
 		resetButton.addActionListener(controller.getResetActionListener());
 		createButton.addActionListener(controller.getCreateActionListener());
+		
+		JButton rectangleButton = new JButton("Rectangle");
+		JButton circleButton = new JButton("Circle");
+		this.getContentPane().add(rectangleButton, BorderLayout.EAST);
+		this.getContentPane().add(circleButton, BorderLayout.WEST);
+		rectangleButton.addActionListener(controller.getSelectRectangleActionListener());
+		circleButton.addActionListener(controller.getSelectCircleActionListener());
 	}
 	
 	
