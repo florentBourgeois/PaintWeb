@@ -35,6 +35,10 @@ public class PaintView extends JPanel{
 		model = t;
 	}
 	
+	public void setModel(SShape model) {
+		this.model = model;
+	}
+	
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);

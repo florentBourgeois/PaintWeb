@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import fr.cci.formationobjet.java.PaintWeb.controller.PaintController;
+
 
 
 
@@ -25,7 +27,9 @@ public class PaintApp extends JFrame{
 		PaintView paintview = new PaintView();
 		this.getContentPane().add(paintview, BorderLayout.CENTER);
 		
-		
+		PaintController controller = new PaintController();
+		paintview.addMouseMotionListener(controller);
+		controller.setView(paintview);
 	}
 	
 	
