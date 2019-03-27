@@ -6,10 +6,12 @@ import java.awt.event.MouseMotionListener;
 
 import fr.cci.formationobjet.java.PaintWeb.IHM.PaintView;
 import fr.cci.formationobjet.java.PaintWeb.model.shapes.SSquare;
+import fr.cci.formationobjet.java.PaintWeb.model.shapes.STampon;
 
 public class PaintController implements MouseMotionListener, MouseListener{
 
 	private PaintView view;
+	private STampon model = new STampon();
 	
 	public void setView(PaintView paintview) {
 		this.view = paintview;
@@ -29,7 +31,8 @@ public class PaintController implements MouseMotionListener, MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("La sourie a été clickée en " + e.getPoint());
-		this.view.setModel(new SSquare(e.getPoint(), 20));
+		model.add(new SSquare(e.getPoint(), 20));
+		this.view.setModel(model);
 		this.view.updateUI();		
 	}
 
