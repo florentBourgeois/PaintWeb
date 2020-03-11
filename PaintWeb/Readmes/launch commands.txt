@@ -1,0 +1,2 @@
+to launch the project using maven : 
+mvn clean install spring-boot:run

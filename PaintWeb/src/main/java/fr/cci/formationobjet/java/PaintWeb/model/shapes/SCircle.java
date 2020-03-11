@@ -14,8 +14,8 @@ public class SCircle extends SShape {
 
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private SPixel origin = new SPixel(0,0);
-	private int radius = 1; 
-	
+	private int radius = 1;
+
 	public SCircle(Point p, int r) {
 		origin = new SPixel(p.x, p.y);
 		radius = Math.abs(r);
