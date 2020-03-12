@@ -3,11 +3,14 @@ package fr.cci.formationobjet.java.PaintWeb.web.controller;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.Optional;
 
+import fr.cci.formationobjet.java.PaintWeb.PaintWebServerApplication;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
@@ -24,8 +27,11 @@ import fr.cci.formationobjet.java.PaintWeb.model.shapes.DAO.ShapeDAO;
 
 @RestController
 public class PaintServerAnalysisController {
-	
-	@Autowired ShapeDAO shapeDAO;
+
+    private static final Logger logger = LogManager.getLogger(PaintWebServerApplication.class);
+
+
+    @Autowired ShapeDAO shapeDAO;
 	
 	private static final ObjectMapper MAPPER = new ObjectMapper();
 	
@@ -58,7 +64,32 @@ public class PaintServerAnalysisController {
         return shapeDAO.findAll();
     }
 
+    
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<SShape> deleteUser(@PathVariable("id") long id) {
+    	Optional<SShape> optionalShape = shapeDAO.findById(id);
+    	if (optionalShape.isPresent()) {
+    		shapeDAO.delete(optionalShape.get());
+    		return ResponseEntity.noContent().build();
+    	}
+    	else {
+            logger.info("User with id: {} not found", id);
+    		return ResponseEntity.notFound().build();
+    	}
 
+    }
+
+    @DeleteMapping(value = "paint/shapes/{id}")
+    public ResponseEntity<SShape> delSpixel(@PathVariable int id) {
+    	SShape s = shapeDAO.findById(id);
+    	if (s instanceof SPixel) {
+            shapeDAO.delete(s);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+
+    }
+    
     @RequestMapping(value="/paint/pixels", method=RequestMethod.POST)
     public SPixel addPixel(@RequestBody SPixel px)  {
         return this.shapeDAO.save(px);
