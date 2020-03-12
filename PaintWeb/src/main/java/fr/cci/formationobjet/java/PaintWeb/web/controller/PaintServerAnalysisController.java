@@ -63,7 +63,7 @@ public class PaintServerAnalysisController {
             return ResponseEntity.ok(s);
         }
         else {
-            logger.info("Pixel with id: {} not found", id);
+            logger.info("shape to translate with id: {} not found", id);
             return ResponseEntity.badRequest().build();
         }
     }
@@ -79,7 +79,22 @@ public class PaintServerAnalysisController {
             return ResponseEntity.ok(s);
         }
         else {
-            logger.info("Pixel with id: {} not found", id);
+            logger.info("shape to setLoc with id: {} not found", id);
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PutMapping(value = "paint/shapes/{id}/toggleSelect")
+    public ResponseEntity<SShape> toggleSelectShape(@PathVariable long id) {
+        Optional<SShape> optionalShape = shapeDAO.findById(id);
+        if (optionalShape.isPresent()) {
+            SShape s = optionalShape.get();
+            s.toggleSelect();
+            shapeDAO.save(s);
+            return ResponseEntity.ok(s);
+        }
+        else {
+            logger.info("shape to toggle with id: {} not found", id);
             return ResponseEntity.badRequest().build();
         }
     }
