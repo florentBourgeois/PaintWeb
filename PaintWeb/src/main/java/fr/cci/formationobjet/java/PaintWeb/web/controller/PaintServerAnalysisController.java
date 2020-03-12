@@ -2,6 +2,7 @@ package fr.cci.formationobjet.java.PaintWeb.web.controller;
 
 
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -48,10 +49,41 @@ public class PaintServerAnalysisController {
     }
 	
     @GetMapping(value = "paint/shapes/{id}")
-    public String getSpixel(@PathVariable int id) {
-        return "Vous avez demandé un spixel avec l'id  " + id;
+    public List<SShape> getShape(@PathVariable int id) {
+        return this.shapeDAO.findAll();
     }
-    
+
+    @PutMapping(value = "paint/shapes/{id}/translate")
+    public ResponseEntity<SShape> translateSHape(@PathVariable long id, @RequestBody Point p) {
+        Optional<SShape> optionalShape = shapeDAO.findById(id);
+        if (optionalShape.isPresent()) {
+            SShape s = optionalShape.get();
+            s.translate(p.x, p.y);
+            shapeDAO.save(s);
+            return ResponseEntity.ok(s);
+        }
+        else {
+            logger.info("Pixel with id: {} not found", id);
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+
+    @PutMapping(value = "paint/shapes/{id}/setLocation")
+    public ResponseEntity<SShape> setShapeLoc(@PathVariable long id, @RequestBody Point p) {
+        Optional<SShape> optionalShape = shapeDAO.findById(id);
+        if (optionalShape.isPresent()) {
+            SShape s = optionalShape.get();
+            s.setLoc(p);
+            shapeDAO.save(s);
+            return ResponseEntity.ok(s);
+        }
+        else {
+            logger.info("Pixel with id: {} not found", id);
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
     
     @RequestMapping(value="/paint/shapes", method=RequestMethod.GET)
     public List<SShape> listShapes() throws JsonProcessingException {
@@ -65,15 +97,15 @@ public class PaintServerAnalysisController {
     }
 
     
-    @DeleteMapping(value = "/{id}")
-    public ResponseEntity<SShape> deleteUser(@PathVariable("id") long id) {
+    @DeleteMapping(value = "paint/pixels/{id}")
+    public ResponseEntity<SShape> deletePixel(@PathVariable("id") long id) {
     	Optional<SShape> optionalShape = shapeDAO.findById(id);
     	if (optionalShape.isPresent()) {
     		shapeDAO.delete(optionalShape.get());
     		return ResponseEntity.noContent().build();
     	}
     	else {
-            logger.info("User with id: {} not found", id);
+            logger.info("Pixel with id: {} not found", id);
     		return ResponseEntity.notFound().build();
     	}
 
@@ -86,7 +118,7 @@ public class PaintServerAnalysisController {
             shapeDAO.delete(s);
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.badRequest().build();
 
     }
     

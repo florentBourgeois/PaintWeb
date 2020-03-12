@@ -17,15 +17,15 @@
                     10 MegaBytes -->
                 <OnStartupTriggeringPolicy />
                 <SizeBasedTriggeringPolicy
-                        size="10 MB" />
-                <TimeBasedTriggeringPolicy />
+                        size="100 kB" />
+                <TimeBasedTriggeringPolicy interval="7" />
             </Policies>
         </RollingFile>
     </Appenders>
 
     <Loggers>
         <!-- LOG everything at INFO level -->
-        <Root level="debug">
+        <Root level="info">
             <AppenderRef ref="Console" />
             <AppenderRef ref="RollingFile" />
         </Root>
